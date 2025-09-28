@@ -1,1 +1,53 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Hide scrollbar for WebKit-based browsers (Chrome, Safari) */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Internet Explorer and Edge */
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+/* Hide scrollbar for Firefox */
+.scrollbar-hidden {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Apply the above rules */
+.scrollbar-hidden {
+  overflow: auto; /* Make sure overflow is set to auto or scroll */
+}
+
+
+
+
+@layer utilities {
+  /* 🔄 scroll background animation */
+  @keyframes scrollBackground {
+    0% {
+      background-position: -800px 0px;
+    }
+    100% {
+      background-position: 800px 0px;
+    }
+  }
+  .animate-scroll-bg {
+    animation: scrollBackground 5s linear infinite;
+  }
+
+  /* 👻 fade-in animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-in-out;
+  }
+}
