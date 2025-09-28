@@ -52,14 +52,50 @@ Mobile responsive design.
 
 Shimmer/loading skeleton effect for chat messages.
 
-Local storage for persisting auth and chat data.
-
 Toast notifications for key actions (OTP sent, message sent, chatroom deleted).
 
-⚠️ Debounced search bar to filter chatrooms is planned but not fully implemented.
+
+gemini-clone/
+│
+├── public/                  # Static assets (images, favicon)
+│
+├── src/
+│   ├── assets/                      # Images, icons, and other static resources
+│   ├── components/                  # Reusable components
+│   │   ├── Sidbar/                  # sidebar components
+│   │   ├── MainPageComponent/       # Dashboard components
+│   │   ├── LoginFrom/               # OTP login form components
+│   │   ├── OtpInput/                # OTP input component
+│   │   └── CountrySelect/           # Custom select components (country codes)
+│   │
+│   ├── Context/                     # Reusable context
+        ├── Context/                 # context for the funcality
+│   │   ├── ThemeContext/            # Dark Theme
+│   ├── hooks/               # Custom React hooks
+│   ├── pages/               # Page components (Login, Dashboard, Chatroom)
+│   ├── styles/              # Tailwind CSS and custom styles
+│   ├── utils/               # Utility functions (throttle, formatting, etc.)
+│   └── main.jsx             # Entry point
+│
+├── .env.local               # Environment variables (API keys)
+├── package.json
+├── tailwind.config.js
+└── vite.config.js
+Explanation:
+
+components/: Contains all reusable UI components. Organized by feature for clarity.
+
+context/: Holds React Context providers for managing global state like chatrooms and auth.
+
+pages/: Each route/page component (e.g., login page, dashboard) lives here.
+
+api/: Functions to fetch data from external APIs.
+
+styles/: Tailwind config and custom CSS if needed.
+
+utils/: Helper functions (e.g., date formatting, throttling).
 
 ⚙️ Technologies Used
-
 Frontend: React.js, Vite
 
 Styling: Tailwind CSS
