@@ -25,7 +25,6 @@ const ContrySelect = ({value, onChange}) => {
                 }
           
             })
-
             setCountries(filterdata);
         }catch(e){
             console.error("Error while Fetching data: ", e);
